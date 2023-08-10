@@ -9,4 +9,20 @@ fn main() {
     }
 
     println!("The value of x is: {x}");
+
+    // addition
+    let sum = 5 + 10;
+
+    // substracion
+    let difference = 95.5 - 5.3;
+
+    // multiplication
+    let product = 4 * 30;
+
+    // division
+    let quotient = 56.7 / 32.2;
+    let trucated = -5 / 3;
+
+    // remainder
+    let remainder = 43 % 5;
 }
