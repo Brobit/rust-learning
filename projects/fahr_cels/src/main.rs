@@ -1,9 +1,27 @@
+use std::env;
+
 fn main() {
-    // get the input from the user
-    // to select he right convertion to do, make 2 fonction:
-    // if argv[2] == celsius, convert argv[2] to celsius;
-    // if argv[2] == fahr, convert argv[2] to fahr.
-    // two more fonction :
-    // one to convert celsius to fahr,
-    // the other to convert fahr to celius
+
+    let args: Vec<String> = env::args().collect();
+    let number: f32 = args[1].trim().parse().expect("Please type a number !");
+
+    match args[2].as_str() {
+        "Celsius" => celsius(&number),
+        "Fahrenheit" => fahr(&number),
+        _ => println!("Wrong converstion, please type Celsius or Fahrenheit !"),
+    }
+}
+
+fn celsius(number: &f32) {
+    println!("We are going to convert {} degree Farheheit in Celsius.", number);
+    //put number in celsius
+    let num = (number - 32.0) * 5.0/9.0;
+    println!("It makes {} degree Celsius !", num);
+}
+
+fn fahr(number: &f32) {
+    println!("We are going to convert {} degree Celsius in Fahrenheit.", number);
+    //put number in fahr
+    let num = number * 9.0/5.0 + 32.0;
+    println!("It makes {} in Fahrenheit !", num);
 }
